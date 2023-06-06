@@ -1,3 +1,5 @@
+import { words } from "./words.js";
+
 // Total number of guesses
 var guesses = 6; 
 //length of word
@@ -8,7 +10,9 @@ var row = 0;
 var col = 0;
 
 var gameOver = false;
-var word = "audio";
+var word = words[Math.floor(Math.random() * words.length)];
+console.log(word)
+ 
 
 window.onload = function() {
     initialize();
@@ -25,7 +29,8 @@ function initialize() {
             document.getElementById("board").appendChild(tile);
         }
     }
-
+    //word = wordClass.getArray();
+    //word = word[Math.floor(Math.random() * word.length)];
     // Listen for Key Press
     document.addEventListener("keyup", (key) => {
         if (gameOver) {
