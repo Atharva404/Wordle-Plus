@@ -29,8 +29,7 @@ function initialize() {
             document.getElementById("board").appendChild(tile);
         }
     }
-    //word = wordClass.getArray();
-    //word = word[Math.floor(Math.random() * word.length)];
+    var userWord = "";
     // Listen for Key Press
     document.addEventListener("keyup", (key) => {
         if (gameOver) {
@@ -41,6 +40,7 @@ function initialize() {
                 let currTile = document.getElementById(row.toString() + "-" + col.toString());
                 if (currTile.innerText == "") {
                     currTile.innerText = key.code[3];
+                    userWord += currTile.innerText;
                     col++;
                 }
             }
@@ -49,13 +49,22 @@ function initialize() {
                 col--;
             }
             let currTile = document.getElementById(row.toString() + "-" + col.toString());
-            currTile.innerText = "";    
+            currTile.innerText = "";
+            userWord = userWord.substring(0, userWord.length - 1);   
 
         } else if (key.code == "Enter") {
-            update();
+            console.log(userWord.toLowerCase());
+            if (words.includes(userWord.toLowerCase())) {
+                update();
+                userWord = "";
+                row += 1;
+                col = 0;
+            }
+            else {
+                window.alert("You entered an incorrect word");
+            }
             //start a new row
-            row += 1;
-            col = 0;
+            
         }
         if (!gameOver && row == guesses) {
             gameOver = true;
