@@ -8,7 +8,7 @@ var row = 0;
 var col = 0;
 
 var gameOver = false;
-var word = "Audio";
+var word = "audio";
 
 window.onload = function() {
     initialize();
@@ -65,10 +65,10 @@ function update() {
         let tile = document.getElementById(row.toString() + "-" + i.toString());
         let letter = tile.innerText;
         
-        if (word[i] == letter) {
+        if (word[i].toUpperCase() == letter) {
             tile.classList.add("answer-correct");
             correct++;
-        } else if (word.includes(letter)) {
+        } else if (word.toUpperCase().includes(letter)) {
             tile.classList.add("partially-correct");
         } else {
             tile.classList.add("incorrect");
