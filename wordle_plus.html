@@ -14,12 +14,18 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet"></head>
+
 <body>
     <h1 id = "title">WORDLE PLUS</h1>
     <hr>
     <br>
     <div ID = "board"></div>
     <br>
+    <!--Make this modal an animation for 3 seconds-->
+    <dialog class = "modal" id = "modal">
+        <h2 id = "answer-2">Not a valid word</h2>
+        <button class = " button close-button">close</button>
+    </dialog>
     <h1 id = "answer"></h1>
     <script type="module" src="wordle_plus.js"></script>
 </body>

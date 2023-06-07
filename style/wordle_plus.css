@@ -22,7 +22,14 @@ hr {
     display: flex;
     flex-wrap: wrap;
 }
+.modal {
+    padding: 1 em;
+    max-width: 50ch;
 
+    & > * {
+        margin: 0 0 0.5rem 0;
+    }
+}
 .tile-box {
     /* Box Properties */
     border: 2px solid lightgray;

@@ -1,5 +1,10 @@
 import { words } from "./words.js";
 
+const modal = document.querySelector('#modal');
+const closeDialog = document.querySelector('.close-button');
+
+
+
 // Total number of guesses
 var guesses = 6; 
 //length of word
@@ -15,10 +20,10 @@ console.log(word)
  
 
 window.onload = function() {
-    initialize();
+    start();
 }
 
-function initialize() {
+function start() {
     // Initialize the gameboard
     for (let i = 0; i < guesses; i++) {
         for (let j = 0; j < wordLength; j++) {
@@ -61,7 +66,12 @@ function initialize() {
                 col = 0;
             }
             else {
-                window.alert("You entered an incorrect word");
+                modal.showModal();
+                closeDialog.addEventListener('click', () => {
+                    modal.close();
+                })
+                //make better
+                //window.alert("You entered an incorrect word");
             }
             //start a new row
             
