@@ -22,7 +22,7 @@ console.log(word)
 window.onload = function() {
     start();
 }
-
+ // add animations
 function start() {
     // Initialize the gameboard
     for (let i = 0; i < guesses; i++) {
@@ -84,22 +84,32 @@ function start() {
 }
 
 function update() {
+    const animateDuration = 750;
     let correct = 0;
     for (let i = 0; i < wordLength; i++) {
         let tile = document.getElementById(row.toString() + "-" + i.toString());
         let letter = tile.innerText;
         
-        if (word[i].toUpperCase() == letter) {
-            tile.classList.add("answer-correct");
-            correct++;
-        } else if (word.toUpperCase().includes(letter)) {
-            tile.classList.add("partially-correct");
-        } else {
-            tile.classList.add("incorrect");
-        }
+        setTimeout(() => {
+            if (word[i].toUpperCase() == letter) {
+                tile.classList.add("answer-correct");
+                correct++;
+            } else if (word.toUpperCase().includes(letter)) {
+                tile.classList.add("partially-correct");
+            } else {
+                tile.classList.add("incorrect");
+            }
+        }, (i * animateDuration) / 2);
 
-        if (correct == wordLength) {
-            gameOver = true;
-        }
+        tile.classList.add('animate');
+        tile.style.animationDelay = `${(i * animateDuration) / 2}ms`
+
+        setTimeout(() => {
+            if (correct == wordLength) {
+                gameOver = true;
+                window.alert("Congrats");
+            }
+        }), 3 * animateDuration;
+
     }
 }
