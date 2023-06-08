@@ -1,9 +1,50 @@
 import { words } from "./words.js";
 
 const modal = document.querySelector('#modal');
+const keyboard = document.querySelector('.key-container');
 const closeDialog = document.querySelector('.close-button');
 
+const allKeys = [
+    'Q',
+    'W',
+    'E',
+    'R',
+    'T',
+    'Y',
+    'U',
+    'I',
+    'O',
+    'P',
+    'A',
+    'S',
+    'D',
+    'F',
+    'G',
+    'H',
+    'J',
+    'K',
+    'L',
+    'ENTER',
+    'Z',
+    'X',
+    'C',
+    'V',
+    'B',
+    'N',
+    'M',
+    'DEL'
+];
 
+const clickEvent = () => {
+    console.log("clicked");
+};
+
+allKeys.forEach(key => {
+    const createButton = document.createElement('button');
+    createButton.textContent = key;
+    createButton.addEventListener('click', clickEvent);
+    keyboard.append(createButton);
+});
 
 // Total number of guesses
 var guesses = 6; 
@@ -66,6 +107,7 @@ function start() {
                 col = 0;
             }
             else {
+                console.log("Here!!!");
                 modal.showModal();
                 closeDialog.addEventListener('click', () => {
                     modal.close();
@@ -78,7 +120,7 @@ function start() {
         }
         if (!gameOver && row == guesses) {
             gameOver = true;
-            document.getElementById("answer").innerText = word;
+            document.getElementById("answer-2").innerText = word;
         }
     })
 }
