@@ -42,6 +42,7 @@ const clickEvent = () => {
 allKeys.forEach(key => {
     const createButton = document.createElement('button');
     createButton.textContent = key;
+    createButton.setAttribute('id', key);
     createButton.addEventListener('click', clickEvent);
     keyboard.append(createButton);
 });
