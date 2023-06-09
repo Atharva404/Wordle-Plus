@@ -38,7 +38,13 @@ var userWord = "";
 const clickEvent = (key) => {
     console.log(key);
     let currTile = document.getElementById(row.toString() + "-" + col.toString());
-    if (currTile.innerText == "") {
+    if (key === "DEL") {
+        console.log("del");
+    }
+    else if (key === "ENTER") {
+        console.log("Enter");
+    }
+    else if (currTile.innerText == "") {
         currTile.innerText = key;
         userWord += currTile.innerText;
         col++;
