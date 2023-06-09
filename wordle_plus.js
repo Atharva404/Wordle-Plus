@@ -24,7 +24,7 @@ const allKeys = [
     'J',
     'K',
     'L',
-    'ENTER',
+    'DEL',
     'Z',
     'X',
     'C',
@@ -32,7 +32,7 @@ const allKeys = [
     'B',
     'N',
     'M',
-    'DEL'
+    'ENTER',
 ];
 var userWord = "";
 const clickEvent = (key) => {
