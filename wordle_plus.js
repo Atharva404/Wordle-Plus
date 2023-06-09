@@ -34,16 +34,22 @@ const allKeys = [
     'M',
     'DEL'
 ];
-
-const clickEvent = () => {
-    console.log("clicked");
+var userWord = "";
+const clickEvent = (key) => {
+    console.log(key);
+    let currTile = document.getElementById(row.toString() + "-" + col.toString());
+    if (currTile.innerText == "") {
+        currTile.innerText = key;
+        userWord += currTile.innerText;
+        col++;
+    }
 };
 
 allKeys.forEach(key => {
     const createButton = document.createElement('button');
     createButton.textContent = key;
     createButton.setAttribute('id', key);
-    createButton.addEventListener('click', clickEvent);
+    createButton.addEventListener('click', () => clickEvent(key));
     keyboard.append(createButton);
 });
 
