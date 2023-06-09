@@ -42,7 +42,7 @@ hr {
     width: 71px;
 }
 .key-container button:nth-child(20) {
-    width: 65px;
+    margin-left: 80px;
 }
 
 #title {

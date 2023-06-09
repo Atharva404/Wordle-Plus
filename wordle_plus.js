@@ -24,7 +24,6 @@ const allKeys = [
     'J',
     'K',
     'L',
-    'DEL',
     'Z',
     'X',
     'C',
@@ -32,49 +31,48 @@ const allKeys = [
     'B',
     'N',
     'M',
-    'ENTER',
 ];
 var userWord = "";
-const clickEvent = (key) => {
-    let currTile = document.getElementById(row.toString() + "-" + col.toString());
-    if (key === "DEL") {
-        if (col > 0 && col <= wordLength) {
-            col--;
-        }
-        let currTile = document.getElementById(row.toString() + "-" + col.toString());
-        currTile.innerText = "";
-        userWord = userWord.substring(0, userWord.length - 1);   
-    }
-    else if (key === "ENTER") {
-        console.log(userWord.toLowerCase());
-        if (words.includes(userWord.toLowerCase())) {
-            update();
-            userWord = "";
-            row += 1;
-            col = 0;
-        }
-        else {
-            console.log("clickEvent here");
-            modal.showModal();
-            closeDialog.addEventListener('click', () => {
-                modal.close();
-            })
-        }
-    }
-    else if (currTile.innerText == "") {
-        currTile.innerText = key;
-        userWord += currTile.innerText;
-        console.log("UserWord: " + userWord);
-        col++;
-    }
-    console.log("UserWord: " + userWord)
+const clickEvent = (key, color) => {
+    document.getElementById(key).style.backgroundColor = color;
+    // let currTile = document.getElementById(row.toString() + "-" + col.toString());
+    // if (key === "DEL") {
+    //     if (col > 0 && col <= wordLength) {
+    //         col--;
+    //     }
+    //     let currTile = document.getElementById(row.toString() + "-" + col.toString());
+    //     currTile.innerText = "";
+    //     userWord = userWord.substring(0, userWord.length - 1);   
+    // }
+    // else if (key === "ENTER") {
+    //     console.log(userWord.toLowerCase());
+    //     if (words.includes(userWord.toLowerCase())) {
+    //         update();
+    //         userWord = "";
+    //         row += 1;
+    //         col = 0;
+    //     }
+    //     else {
+    //         console.log("clickEvent here");
+    //         modal.showModal();
+    //         closeDialog.addEventListener('click', () => {
+    //             modal.close();
+    //         })
+    //     }
+    // }
+    // else if (currTile.innerText == "") {
+    //     currTile.innerText = key;
+    //     userWord += currTile.innerText;
+    //     col++;
+    // }
+    // console.log("UserWord: " + userWord)
 };
 
 allKeys.forEach(key => {
     const createButton = document.createElement('button');
     createButton.textContent = key;
     createButton.setAttribute('id', key);
-    createButton.addEventListener('click', () => clickEvent(key));
+    createButton.addEventListener('click', () => clickEvent(key, '#272729'));
     keyboard.append(createButton);
 });
 
@@ -107,7 +105,6 @@ function start() {
             document.getElementById("board").appendChild(tile);
         }
     }
-    var userWord = "";
     // Listen for Key Press
     document.addEventListener("keyup", (key) => {
         if (gameOver) {
@@ -119,7 +116,8 @@ function start() {
                 if (currTile.innerText == "") {
                     currTile.innerText = key.code[3];
                     userWord += currTile.innerText;
-                    console.log("word: " + userWord);
+                    clickEvent(key.code[3], '#272729');
+                    console.log(key.code[3]);
                     col++;
                 }
             }
@@ -127,12 +125,14 @@ function start() {
             if (col > 0 && col <= wordLength) {
                 col--;
             }
+            let letter = userWord[userWord.length-1];
+            clickEvent(letter, "#818384");
             let currTile = document.getElementById(row.toString() + "-" + col.toString());
             currTile.innerText = "";
             userWord = userWord.substring(0, userWord.length - 1);   
 
         } else if (key.code == "Enter") {
-            console.log(userWord.toLowerCase());
+            console.log("Key Press:" + userWord.toLowerCase());
             if (words.includes(userWord.toLowerCase())) {
                 update();
                 userWord = "";
