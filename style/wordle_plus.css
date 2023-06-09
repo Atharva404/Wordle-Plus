@@ -87,20 +87,14 @@ hr {
 
 .answer-correct {
     background-color: #6AAA64;
-    color: white;
-    border-color: white;
 }
 
 .partially-correct {
     background-color: #C9B468;
-    color: white;
-    border-color: white;
 }
 
 .incorrect {
     background-color: #787C7E;
-    color: white;
-    border-color: white;
 }
 
 .animate {

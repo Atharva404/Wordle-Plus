@@ -36,19 +36,38 @@ const allKeys = [
 ];
 var userWord = "";
 const clickEvent = (key) => {
-    console.log(key);
     let currTile = document.getElementById(row.toString() + "-" + col.toString());
     if (key === "DEL") {
-        console.log("del");
+        if (col > 0 && col <= wordLength) {
+            col--;
+        }
+        let currTile = document.getElementById(row.toString() + "-" + col.toString());
+        currTile.innerText = "";
+        userWord = userWord.substring(0, userWord.length - 1);   
     }
     else if (key === "ENTER") {
-        console.log("Enter");
+        console.log(userWord.toLowerCase());
+        if (words.includes(userWord.toLowerCase())) {
+            update();
+            userWord = "";
+            row += 1;
+            col = 0;
+        }
+        else {
+            console.log("clickEvent here");
+            modal.showModal();
+            closeDialog.addEventListener('click', () => {
+                modal.close();
+            })
+        }
     }
     else if (currTile.innerText == "") {
         currTile.innerText = key;
         userWord += currTile.innerText;
+        console.log("UserWord: " + userWord);
         col++;
     }
+    console.log("UserWord: " + userWord)
 };
 
 allKeys.forEach(key => {
@@ -100,6 +119,7 @@ function start() {
                 if (currTile.innerText == "") {
                     currTile.innerText = key.code[3];
                     userWord += currTile.innerText;
+                    console.log("word: " + userWord);
                     col++;
                 }
             }
@@ -120,6 +140,7 @@ function start() {
                 col = 0;
             }
             else {
+                console.log("normal user word: " + userWord);
                 console.log("Here!!!");
                 modal.showModal();
                 closeDialog.addEventListener('click', () => {
