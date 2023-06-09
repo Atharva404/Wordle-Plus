@@ -96,6 +96,7 @@ window.onload = function() {
  // add animations
 function start() {
     // Initialize the gameboard
+    let word = [];
     for (let i = 0; i < guesses; i++) {
         for (let j = 0; j < wordLength; j++) {
             let tile = document.createElement("span");
@@ -117,7 +118,7 @@ function start() {
                     currTile.innerText = key.code[3];
                     userWord += currTile.innerText;
                     clickEvent(key.code[3], '#272729');
-                    console.log(key.code[3]);
+                    word.push(key.code[3]);
                     col++;
                 }
             }
@@ -125,8 +126,11 @@ function start() {
             if (col > 0 && col <= wordLength) {
                 col--;
             }
+            word.pop();
             let letter = userWord[userWord.length-1];
-            clickEvent(letter, "#818384");
+            if (word.includes(letter) == false) {
+                clickEvent(letter, "#818384");
+            }
             let currTile = document.getElementById(row.toString() + "-" + col.toString());
             currTile.innerText = "";
             userWord = userWord.substring(0, userWord.length - 1);   
