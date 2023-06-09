@@ -73,6 +73,7 @@ allKeys.forEach(key => {
     createButton.textContent = key;
     createButton.setAttribute('id', key);
     createButton.addEventListener('click', () => clickEvent(key, '#272729'));
+    createButton.disabled = true;
     keyboard.append(createButton);
 });
 
