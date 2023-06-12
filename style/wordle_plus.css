@@ -22,11 +22,13 @@ hr {
     bottom: 0;
     left: 0;
 }
-
+.navbar {
+    border-bottom: 1px solid white;
+}
 .nav-link:hover::after {
     opacity: 1;
 }
-/*  */
+
 .game {
     height: 90vh;
     display: flex;
