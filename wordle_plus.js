@@ -139,13 +139,14 @@ function update() {
     for (let i = 0; i < wordLength; i++) {
         let tile = document.getElementById(row.toString() + "-" + i.toString());
         let letter = tile.innerText;
-        
         setTimeout(() => {
             if (word[i].toUpperCase() == letter) {
                 tile.classList.add("answer-correct");
+                clickEvent(letter, "#6AAA64");
                 correct++;
             } else if (word.toUpperCase().includes(letter)) {
                 tile.classList.add("partially-correct");
+                clickEvent(letter, "#C9B468");
             } else {
                 tile.classList.add("incorrect");
             }
