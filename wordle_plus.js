@@ -67,7 +67,6 @@ window.onload = function() {
     start();
 }
  // add animations
-let correct = 0;
 function start() {
     // Initialize the gameboard
     let guess = [];
@@ -127,6 +126,7 @@ function start() {
     })
 }
 function update() {
+    let correct = 0;
     const animateDuration = 750;
     for (let i = 0; i < wordLength; i++) {
         let tile = document.getElementById(row.toString() + "-" + i.toString());
@@ -136,13 +136,15 @@ function update() {
                 tile.classList.add("answer-correct");
                 clickEvent(letter, "#6AAA64");
                 correct++;
+                console.log("correct" + correct);
+                console.log("wordLength: " + wordLength);
                 if (correct == wordLength) {
                     gameOver = true;
-                    //console.log("IN here again!!");
+                        //console.log("IN here again!!");
                     showMessage("You Win!");
-                   // window.alert("Congrats");
+                       // window.alert("Congrats");
                 }
-                console.log("correct" + correct);
+                
             } else if (word.toUpperCase().includes(letter)) {
                 tile.classList.add("partially-correct");
                 clickEvent(letter, "#C9B468");
@@ -161,7 +163,9 @@ const showMessage = (message) => {
     const messageE = document.createElement('p');
     messageE.textContent = message;
     messageDisplay.append(messageE);
-    setTimeout(function() {
-        messageDisplay.remove();
-    }, 1200);
+    if (message != "You Win!") {
+        setTimeout(function() {
+            messageE.style.visibility = 'hidden';
+        }, 1200);
+    }
 }
