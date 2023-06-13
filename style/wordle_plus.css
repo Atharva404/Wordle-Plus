@@ -24,6 +24,7 @@ hr {
 }
 .navbar {
     border-bottom: 1px solid #292929;
+    padding-bottom: 20px;
 }
 .nav-link:hover::after {
     opacity: 1;
@@ -35,6 +36,12 @@ hr {
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+}
+p {
+    background-color: white;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 0;
 }
 
 .key-container {
@@ -119,7 +126,7 @@ hr {
 }
 
 .animate {
-    animation: tileAnimation 0.6s ease;
+    animation: tileAnimation 500ms ease forwards;
 }
 
 @keyframes tileAnimation {
