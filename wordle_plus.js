@@ -161,4 +161,7 @@ const showMessage = (message) => {
     const messageE = document.createElement('p');
     messageE.textContent = message;
     messageDisplay.append(messageE);
+    setTimeout(function() {
+        messageDisplay.remove();
+    }, 1200);
 }
