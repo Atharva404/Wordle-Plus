@@ -126,7 +126,7 @@ p {
 }
 
 .animate {
-    animation: tileAnimation 500ms ease forwards;
+    animation: tileAnimation 600ms ease forwards;
 }
 
 @keyframes tileAnimation {

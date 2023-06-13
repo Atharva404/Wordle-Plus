@@ -169,12 +169,6 @@ function update() {
         }), 3 * animateDuration;
 
     }
-    if (correct == wordLength) {
-        gameOver = true;
-        console.log("IN here again!!");
-        showMessage("You Win!");
-       // window.alert("Congrats");
-    }
 }
 
 const showMessage = (message) => {
