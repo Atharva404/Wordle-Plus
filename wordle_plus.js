@@ -67,6 +67,7 @@ window.onload = function() {
     start();
 }
  // add animations
+let correct = 0;
 function start() {
     // Initialize the gameboard
     let guess = [];
@@ -116,18 +117,8 @@ function start() {
                 col = 0;
             }
             else {
-                console.log("normal user word: " + userWord);
-                console.log("Here!!!");
                 showMessage("You entered an invalid word");
-                // modal.showModal();
-                // closeDialog.addEventListener('click', () => {
-                    // modal.close();
-                // })
-                //make better
-                //window.alert("You entered an incorrect word");
             }
-            //start a new row
-            
         }
         if (!gameOver && row == guesses) {
             gameOver = true;
@@ -135,7 +126,6 @@ function start() {
         }
     })
 }
-let correct = 0;
 function update() {
     const animateDuration = 750;
     for (let i = 0; i < wordLength; i++) {
@@ -146,6 +136,12 @@ function update() {
                 tile.classList.add("answer-correct");
                 clickEvent(letter, "#6AAA64");
                 correct++;
+                if (correct == wordLength) {
+                    gameOver = true;
+                    //console.log("IN here again!!");
+                    showMessage("You Win!");
+                   // window.alert("Congrats");
+                }
                 console.log("correct" + correct);
             } else if (word.toUpperCase().includes(letter)) {
                 tile.classList.add("partially-correct");
@@ -153,22 +149,11 @@ function update() {
             } else {
                 tile.classList.add("incorrect");
             }
-        }), (3 * animateDuration) / 2;
-
+        }, (i * animateDuration) / 2);
         tile.classList.add('animate');
         tile.style.animationDelay = `${(i * animateDuration) / 2}ms`;
-
-        setTimeout(() => {
-            console.log("In here + word_length: " + correct);
-            if (correct == wordLength) {
-                gameOver = true;
-                console.log("IN here again!!");
-                showMessage("You Win!");
-               // window.alert("Congrats");
-            }
-        }), (i * animateDuration) / 2;
-
     }
+
 }
 
 const showMessage = (message) => {
