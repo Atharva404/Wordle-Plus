@@ -1,10 +1,11 @@
 import { words } from "./words.js";
 
-// const modal = document.querySelector('#modal');
 const keyboard = document.querySelector('.key-container');
-//const closeDialog = document.querySelector('.close-button');
 const messageDisplay = document.querySelector(".message-container");
 
+window.addEventListener("load", (event) => {
+    console.log("Welcome to Wordle!");
+});
 
 const allKeys = [
     'Q',
@@ -140,9 +141,7 @@ function update() {
                 console.log("wordLength: " + wordLength);
                 if (correct == wordLength) {
                     gameOver = true;
-                        //console.log("IN here again!!");
                     showMessage("You Win!");
-                       // window.alert("Congrats");
                 }
                 
             } else if (word.toUpperCase().includes(letter)) {
