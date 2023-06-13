@@ -153,7 +153,7 @@ function update() {
             } else {
                 tile.classList.add("incorrect");
             }
-        }, (i * animateDuration) / 2);
+        }), (3 * animateDuration) / 2;
 
         tile.classList.add('animate');
         tile.style.animationDelay = `${(i * animateDuration) / 2}ms`;
@@ -166,7 +166,7 @@ function update() {
                 showMessage("You Win!");
                // window.alert("Congrats");
             }
-        }), 3 * animateDuration;
+        }), (i * animateDuration) / 2;
 
     }
 }
