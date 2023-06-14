@@ -161,10 +161,6 @@ const showMessage = (message) => {
     var ptag = document.getElementById('par1');
     ptag.innerHTML = message;
     ptag.style.visibility = "visible";
-
-    // const messageE = document.createElement('p');
-    // messageE.textContent = message;
-    // messageDisplay.append(messageE);
     if (message != "You Win!") {
         setTimeout(function() {
             ptag.style.visibility = "hidden";
