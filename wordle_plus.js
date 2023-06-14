@@ -156,15 +156,18 @@ function update() {
     }
 
 }
-
 const showMessage = (message) => {
     console.log("Here");
-    const messageE = document.createElement('p');
-    messageE.textContent = message;
-    messageDisplay.append(messageE);
+    var ptag = document.getElementById('par1');
+    ptag.innerHTML = message;
+    ptag.style.visibility = "visible";
+
+    // const messageE = document.createElement('p');
+    // messageE.textContent = message;
+    // messageDisplay.append(messageE);
     if (message != "You Win!") {
         setTimeout(function() {
-            messageE.style.visibility = 'hidden';
+            ptag.style.visibility = "hidden";
         }, 1200);
     }
 }
