@@ -126,6 +126,7 @@ function start() {
         }
     })
 }
+
 function update() {
     let correct = 0;
     const animateDuration = 750;
@@ -137,8 +138,6 @@ function update() {
                 tile.classList.add("answer-correct");
                 clickEvent(letter, "#6AAA64");
                 correct++;
-                console.log("correct" + correct);
-                console.log("wordLength: " + wordLength);
                 if (correct == wordLength) {
                     gameOver = true;
                     showMessage("You Win!");
@@ -154,7 +153,6 @@ function update() {
         tile.classList.add('animate');
         tile.style.animationDelay = `${(i * animateDuration) / 2}ms`;
     }
-
 }
 const showMessage = (message) => {
     console.log("Here");
