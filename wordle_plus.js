@@ -102,7 +102,7 @@ function start() {
             guess.pop();
             let letter = userWord[userWord.length-1];
             if (guess.includes(letter) == false) {
-                clickEvent(letter, "#818384");
+                clickEvent(letter, "#EDEDF4");
             }
             let currTile = document.getElementById(row.toString() + "-" + col.toString());
             currTile.innerText = "";
@@ -136,7 +136,7 @@ function update() {
         setTimeout(() => {
             if (word[i].toUpperCase() == letter) {
                 tile.classList.add("answer-correct");
-                clickEvent(letter, "#6AAA64");
+                clickEvent(letter, "#5DF88E");
                 correct++;
                 if (correct == wordLength) {
                     gameOver = true;
@@ -145,7 +145,7 @@ function update() {
                 
             } else if (word.toUpperCase().includes(letter)) {
                 tile.classList.add("partially-correct");
-                clickEvent(letter, "#C9B468");
+                clickEvent(letter, "#FF6201");
             } else {
                 tile.classList.add("incorrect");
             }
