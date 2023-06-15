@@ -90,7 +90,7 @@ function start() {
                 if (currTile.innerText == "") {
                     currTile.innerText = key.code[3];
                     userWord += currTile.innerText;
-                    clickEvent(key.code[3], '#489FB5');
+                    clickEvent(key.code[3], '#698996');
                     guess.push(key.code[3]);
                     col++;
                 }
@@ -102,7 +102,7 @@ function start() {
             guess.pop();
             let letter = userWord[userWord.length-1];
             if (guess.includes(letter) == false) {
-                clickEvent(letter, "#818384");
+                clickEvent(letter, "#0A0908");
             }
             let currTile = document.getElementById(row.toString() + "-" + col.toString());
             currTile.innerText = "";
@@ -136,7 +136,7 @@ function update() {
         setTimeout(() => {
             if (word[i].toUpperCase() == letter) {
                 tile.classList.add("answer-correct");
-                clickEvent(letter, "#23CE6B");
+                clickEvent(letter, "#23CE6B"); //green
                 correct++;
                 if (correct == wordLength) {
                     gameOver = true;
@@ -145,7 +145,7 @@ function update() {
                 
             } else if (word.toUpperCase().includes(letter)) {
                 tile.classList.add("partially-correct");
-                clickEvent(letter, "#F3752B");
+                clickEvent(letter, "#FFAD69"); // orange
             } else {
                 tile.classList.add("incorrect");
             }

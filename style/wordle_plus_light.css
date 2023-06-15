@@ -6,7 +6,7 @@ body {
 
 hr {
     width: 500px;
-    background-color: white;
+    background-color: #251605;
 }
 .nav-link {
     position: relative;
@@ -23,7 +23,8 @@ hr {
     left: 0;
 }
 .navbar {
-    border-bottom: 1px solid #292929;
+    border-bottom: 1px solid #251605;
+    background-color: #0A0908;
     padding-bottom: 20px;
 }
 .nav-link:hover::after {
@@ -57,8 +58,8 @@ p {
     border: none;
     font-size: large;
     font-weight: bold;
-    background-color: #489FB5;
-    color: #222222;
+    background-color: #0A0908;
+    color: #EDEDF4;
     margin: 4px;
 }
 
@@ -114,15 +115,18 @@ p {
 }
 
 .answer-correct {
-    background-color: #6AAA64;
+    background-color: #23CE6B;
+    color: white;
 }
 
 .partially-correct {
-    background-color: #C9B468;
+    background-color: #FFAD69;
+    color: white;
 }
 
 .incorrect {
-    background-color: #787C7E;
+    background-color: #272D2D;
+    color: white;
 }
 
 .animate {
