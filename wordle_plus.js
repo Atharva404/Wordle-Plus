@@ -96,7 +96,7 @@ function start() {
                     col++;
                 }
             }
-        } else if (key.code == "Backspace") {
+        } else if (key.code == "Backspace" && col != 0) {
             if (col > 0 && col <= wordLength) {
                 col--;
             }
