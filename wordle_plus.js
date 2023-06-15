@@ -1,7 +1,6 @@
 import { words } from "./words.js";
 
 const keyboard = document.querySelector('.key-container');
-const messageDisplay = document.querySelector(".message-container");
 
 window.addEventListener("load", (event) => {
     console.log("Welcome to Wordle!");
@@ -117,12 +116,13 @@ function start() {
                 col = 0;
             }
             else {
-                showMessage("You entered an invalid word");
+                showMessage("You entered an invalid word", 1);
             }
         }
         if (!gameOver && row == guesses) {
             gameOver = true;
-            document.getElementById("answer-2").innerText = word;
+            var newMessage = "You Lose! The correct word is: " + word;
+            showMessage(newMessage, 3);
         }
     })
 }
@@ -140,7 +140,7 @@ function update() {
                 correct++;
                 if (correct == wordLength) {
                     gameOver = true;
-                    showMessage("You Win!");
+                    showMessage("You Win!", 2);
                 }
                 
             } else if (word.toUpperCase().includes(letter)) {
@@ -154,12 +154,12 @@ function update() {
         tile.style.animationDelay = `${(i * animateDuration) / 2}ms`;
     }
 }
-const showMessage = (message) => {
+const showMessage = (message, index) => {
     console.log("Here");
     var ptag = document.getElementById('par1');
     ptag.innerHTML = message;
     ptag.style.visibility = "visible";
-    if (message != "You Win!") {
+    if (index === 1) {
         setTimeout(function() {
             ptag.style.visibility = "hidden";
         }, 1200);
