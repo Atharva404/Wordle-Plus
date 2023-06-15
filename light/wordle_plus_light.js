@@ -1,4 +1,4 @@
-import { words } from "../dark/words.js";
+import { words } from "../words.js";
 
 const keyboard = document.querySelector('.key-container');
 
