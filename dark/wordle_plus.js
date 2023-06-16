@@ -3,10 +3,11 @@ import { words } from "../words.js";
 const keyboard = document.querySelector('.key-container');
 document.getElementById("streak-button").addEventListener("click", myFunction);
 
+var score = 0;
+
 function myFunction() {
     console.log("clicked!");
-    document.getElementById("streak-button").innerHTML = "Current Streak: 5";
-//   document.getElementById("demo").innerHTML = "YOU CLICKED ME!";
+    document.getElementById("streak-button").innerHTML = "Current Streak: " + score;
 }
 window.addEventListener("load", (event) => {
     console.log("Welcome to Wordle Plus!");
@@ -65,8 +66,7 @@ var col = 0;
 
 var gameOver = false;
 var word = words[Math.floor(Math.random() * words.length)];
-console.log(word)
- 
+console.log(word);
 
 window.onload = function() {
     start();
@@ -147,6 +147,7 @@ function update() {
                 tile.classList.add("answer-correct");
                 clickEvent(letter, "#5DF88E");
                 coloredKeys.push(letter);
+                score++;
                 correct++;
                 if (correct == wordLength) {
                     gameOver = true;
