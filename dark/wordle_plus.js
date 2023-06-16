@@ -1,11 +1,16 @@
 import { words } from "../words.js";
 
 const keyboard = document.querySelector('.key-container');
+document.getElementById("streak-button").addEventListener("click", myFunction);
 
+function myFunction() {
+    console.log("clicked!");
+    document.getElementById("streak-button").innerHTML = "Current Streak: 5";
+//   document.getElementById("demo").innerHTML = "YOU CLICKED ME!";
+}
 window.addEventListener("load", (event) => {
-
+    console.log("Welcome to Wordle Plus!");
 });
-
 const allKeys = [
     'Q',
     'W',
