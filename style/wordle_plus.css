@@ -22,7 +22,10 @@ hr {
     bottom: 0;
     left: 0;
 }
-
+#streak-button {
+    outline: none;
+    box-shadow: none;
+}
 .navbar {
     border-bottom: 1px solid #292929;
     padding-bottom: 20px;
