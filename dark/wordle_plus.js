@@ -7,7 +7,7 @@ document.getElementById("shuffle-button").addEventListener("click", shuffleFunct
 var score = 0;
 function shuffleFunction() {
     console.log("shuffle clicked!");
-    start();
+    //start();
 }
 function myFunction() {
     console.log("clicked!");
