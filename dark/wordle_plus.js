@@ -66,6 +66,8 @@ console.log(word)
 window.onload = function() {
     start();
 }
+
+var coloredKeys = [];
  // add animations
 function start() {
     // Initialize the gameboard
@@ -90,7 +92,9 @@ function start() {
                 if (currTile.innerText == "") {
                     currTile.innerText = key.code[3];
                     userWord += currTile.innerText;
-                    clickEvent(key.code[3], '#272729');
+                    if (!coloredKeys.includes(key.code[3])) {
+                        clickEvent(key.code[3], '#272729');
+                    }
                     guess.push(key.code[3]);
                     col++;
                 }
@@ -137,6 +141,7 @@ function update() {
             if (word[i].toUpperCase() == letter) {
                 tile.classList.add("answer-correct");
                 clickEvent(letter, "#5DF88E");
+                coloredKeys.push(letter);
                 correct++;
                 if (correct == wordLength) {
                     gameOver = true;
@@ -145,6 +150,7 @@ function update() {
                 
             } else if (word.toUpperCase().includes(letter)) {
                 tile.classList.add("partially-correct");
+                coloredKeys.push(letter);
                 clickEvent(letter, "#FF6201");
             } else {
                 tile.classList.add("incorrect");

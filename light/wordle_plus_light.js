@@ -40,6 +40,8 @@ const clickEvent = (key, color) => {
     document.getElementById(key).style.backgroundColor = color;
 };
 
+var coloredKeys = [];
+
 allKeys.forEach(key => {
     const createButton = document.createElement('button');
     createButton.textContent = key;
@@ -90,7 +92,9 @@ function start() {
                 if (currTile.innerText == "") {
                     currTile.innerText = key.code[3];
                     userWord += currTile.innerText;
-                    clickEvent(key.code[3], '#698996');
+                    if (!coloredKeys.includes(key.code[3])) {
+                        clickEvent(key.code[3], '#698996');
+                    }
                     guess.push(key.code[3]);
                     col++;
                 }
@@ -137,6 +141,7 @@ function update() {
             if (word[i].toUpperCase() == letter) {
                 tile.classList.add("answer-correct");
                 clickEvent(letter, "#23CE6B"); //green
+                coloredKeys.push(letter);
                 correct++;
                 if (correct == wordLength) {
                     gameOver = true;
@@ -145,6 +150,7 @@ function update() {
                 
             } else if (word.toUpperCase().includes(letter)) {
                 tile.classList.add("partially-correct");
+                coloredKeys.push(letter);
                 clickEvent(letter, "#FFAD69"); // orange
             } else {
                 tile.classList.add("incorrect");
