@@ -12,6 +12,11 @@ function myFunction() {
 window.addEventListener("load", (event) => {
     console.log("Welcome to Wordle Plus!");
 });
+
+document.querySelector('.dropdown-menu').addEventListener('click', function(event) {
+    event.stopPropagation();
+ });
+ 
 const allKeys = [
     'Q',
     'W',
