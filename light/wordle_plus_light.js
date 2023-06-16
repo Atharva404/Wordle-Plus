@@ -1,10 +1,21 @@
 import { words } from "../words.js";
 
 const keyboard = document.querySelector('.key-container');
+document.getElementById("streak-button").addEventListener("click", myFunction);
 
+var score = 0;
+
+function myFunction() {
+    console.log("clicked!");
+    document.getElementById("streak-button").innerHTML = "Current Streak: " + score;
+}
 window.addEventListener("load", (event) => {
-    console.log("Welcome to Wordle!");
+    console.log("Welcome to Wordle Plus!");
 });
+
+document.querySelector('.dropdown-menu').addEventListener('click', function(event) {
+    event.stopPropagation();
+ });
 
 const allKeys = [
     'Q',
@@ -143,6 +154,7 @@ function update() {
                 clickEvent(letter, "#23CE6B"); //green
                 coloredKeys.push(letter);
                 correct++;
+                score++;
                 if (correct == wordLength) {
                     gameOver = true;
                     showMessage("You Win!", 2);
