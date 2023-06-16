@@ -3,7 +3,7 @@ import { words } from "../words.js";
 const keyboard = document.querySelector('.key-container');
 
 window.addEventListener("load", (event) => {
-    console.log("Welcome to Wordle!");
+
 });
 
 const allKeys = [
