@@ -2,9 +2,13 @@ import { words } from "../words.js";
 
 const keyboard = document.querySelector('.key-container');
 document.getElementById("streak-button").addEventListener("click", myFunction);
+document.getElementById("shuffle-button").addEventListener("click", shuffleFunction);
 
 var score = 0;
-
+function shuffleFunction() {
+    console.log("shuffle clicked!");
+    start();
+}
 function myFunction() {
     console.log("clicked!");
     document.getElementById("streak-button").innerHTML = "Current Streak: " + score;
@@ -16,7 +20,7 @@ window.addEventListener("load", (event) => {
 document.querySelector('.dropdown-menu').addEventListener('click', function(event) {
     event.stopPropagation();
  });
- 
+
 const allKeys = [
     'Q',
     'W',
@@ -71,7 +75,6 @@ var col = 0;
 
 var gameOver = false;
 var word = words[Math.floor(Math.random() * words.length)];
-console.log(word);
 
 window.onload = function() {
     start();
@@ -81,6 +84,8 @@ var coloredKeys = [];
  // add animations
 function start() {
     // Initialize the gameboard
+    word = words[Math.floor(Math.random() * words.length)];
+    console.log(word);
     let guess = [];
     for (let i = 0; i < guesses; i++) {
         for (let j = 0; j < wordLength; j++) {

@@ -26,6 +26,10 @@ hr {
     outline: none;
     box-shadow: none;
 }
+#shuffle-button {
+    outline: none;
+    box-shadow: none;
+}
 .navbar {
     border-bottom: 1px solid #292929;
     padding-bottom: 20px;
