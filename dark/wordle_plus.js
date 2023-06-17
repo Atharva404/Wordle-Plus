@@ -135,8 +135,8 @@ function start() {
             userWord = userWord.substring(0, userWord.length - 1);   
 
         } else if (key.code == "Enter") {
-            numberTries++;
             if (words.includes(userWord.toLowerCase())) {
+                numberTries++;
                 update();
                 userWord = "";
                 row += 1;
