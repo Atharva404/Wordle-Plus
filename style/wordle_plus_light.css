@@ -27,7 +27,10 @@ hr {
     outline: none;
     box-shadow: none;
 }
-
+#tries-button {
+    outline: none;
+    box-shadow: none;
+}
 .navbar {
     border-bottom: 1px solid #251605;
     background-color: #0A0908;

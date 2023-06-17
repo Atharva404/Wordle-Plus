@@ -2,12 +2,18 @@ import { words } from "../words.js";
 
 const keyboard = document.querySelector('.key-container');
 document.getElementById("streak-button").addEventListener("click", myFunction);
+document.getElementById("tries-button").addEventListener("click", triesFunction);
 
 var score = 0;
-
+var numberTries = 0;
 function myFunction() {
     console.log("clicked!");
     document.getElementById("streak-button").innerHTML = "Current Points: " + score;
+}
+function triesFunction() {
+    console.log("tries function clicked!");
+    document.getElementById("tries-button").innerHTML = "Total Tries: " + numberTries;
+    //start();
 }
 window.addEventListener("load", (event) => {
     console.log("Welcome to Wordle Plus!");
@@ -124,6 +130,7 @@ function start() {
             userWord = userWord.substring(0, userWord.length - 1);   
 
         } else if (key.code == "Enter") {
+            numberTries++;
             if (words.includes(userWord.toLowerCase())) {
                 update();
                 userWord = "";
