@@ -7,7 +7,7 @@ var score = 0;
 
 function myFunction() {
     console.log("clicked!");
-    document.getElementById("streak-button").innerHTML = "Current Streak: " + score;
+    document.getElementById("streak-button").innerHTML = "Current Points: " + score;
 }
 window.addEventListener("load", (event) => {
     console.log("Welcome to Wordle Plus!");
