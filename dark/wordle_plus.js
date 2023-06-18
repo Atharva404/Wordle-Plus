@@ -4,16 +4,16 @@ const keyboard = document.querySelector('.key-container');
 document.getElementById("streak-button").addEventListener("click", myFunction);
 document.getElementById("shuffle-button").addEventListener("click", shuffleFunction);
 document.getElementById("tries-button").addEventListener("click", triesFunction);
-
 var score = 0;
 var numberTries = 0;
+function shuffleFunction() {
+    console.log("shuffle function clicked!");
+    clear();
+    //start();
+}
 function triesFunction() {
     console.log("tries function clicked!");
     document.getElementById("tries-button").innerHTML = "Total Tries: " + numberTries;
-    //start();
-}
-function shuffleFunction() {
-    console.log("shuffle clicked!");
     //start();
 }
 function myFunction() {
@@ -81,14 +81,25 @@ var row = 0;
 var col = 0;
 
 var gameOver = false;
-var word = "";
-word = words[Math.floor(Math.random() * words.length)];
+var word = words[Math.floor(Math.random() * words.length)];
+
 window.onload = function() {
     start();
 }
 
 var coloredKeys = [];
  // add animations
+
+function clear() {
+    for (let i = 0; i < guesses; i++) {
+        for (let j = 0; j < wordLength; j++) {
+            let currTile = document.getElementById(i.toString() + "-" + j.toString());
+            currTile.innerText = "";
+        }
+    }
+    row = 0;
+    col = 0;
+}
 function start() {
     // Initialize the gameboard
     word = words[Math.floor(Math.random() * words.length)];
