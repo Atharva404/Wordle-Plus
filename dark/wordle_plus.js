@@ -8,7 +8,8 @@ var score = 0;
 var numberTries = 0;
 function shuffleFunction() {
     console.log("shuffle function clicked!");
-    clear();
+    console.log(numberTries);
+    console.log(score);
     //start();
 }
 function triesFunction() {
@@ -90,19 +91,6 @@ window.onload = function() {
 var coloredKeys = [];
  // add animations
 
-function clear() {
-    for (let i = 0; i < guesses; i++) {
-        for (let j = 0; j < wordLength; j++) {
-            let currTile = document.getElementById(i.toString() + "-" + j.toString());
-            currTile.innerText = "";
-        }
-    }
-    for (let i = 0; i < allKeys.length; i++) {
-        clickEvent(allKeys[i], '#EDEDF4');
-    }
-    row = 0;
-    col = 0;
-}
 function start() {
     // Initialize the gameboard
     word = words[Math.floor(Math.random() * words.length)];
@@ -123,9 +111,11 @@ function start() {
             return ;
         }
         if ("KeyA" <= key.code && key.code <= "KeyZ") {
+
             if (col < wordLength) {
                 let currTile = document.getElementById(row.toString() + "-" + col.toString());
                 if (currTile.innerText == "") {
+                    console.log(key.code[3]);
                     currTile.innerText = key.code[3];
                     userWord += currTile.innerText;
                     if (!coloredKeys.includes(key.code[3])) {
