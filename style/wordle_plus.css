@@ -56,6 +56,14 @@ p {
     margin: 0;
 }
 
+#playAgain {
+    background-color: #5DF88E;
+    border-radius: 10px;
+    padding: 10px;
+    padding-top: 2px;
+    padding-bottom: 5px;
+    margin: 0;
+}
 .key-container {
     width: 510px;
     display: flex;
