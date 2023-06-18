@@ -81,8 +81,8 @@ var row = 0;
 var col = 0;
 
 var gameOver = false;
-var word = words[Math.floor(Math.random() * words.length)];
-
+var word = "";
+word = words[Math.floor(Math.random() * words.length)];
 window.onload = function() {
     start();
 }
