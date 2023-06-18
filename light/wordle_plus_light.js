@@ -145,6 +145,9 @@ function start() {
             gameOver = true;
             var newMessage = "You Lose! The correct word is: " + word;
             showMessage(newMessage, 3);
+            setTimeout(function() {
+                document.getElementById("playAgain").style.visibility = "visible";
+            }, 1200);
         }
     })
 }
@@ -165,6 +168,9 @@ function update() {
                 if (correct == wordLength) {
                     gameOver = true;
                     showMessage("You Win!", 2);
+                    setTimeout(function() {
+                        document.getElementById("playAgain").style.visibility = "visible";
+                    }, 1200);
                 }
                 
             } else if (word.toUpperCase().includes(letter)) {
