@@ -142,9 +142,11 @@ function start() {
             if (words.includes(userWord.toLowerCase())) {
                 numberTries++;
                 update();
-                userWord = "";
-                row += 1;
-                col = 0;
+                setTimeout(function() {
+                    userWord = "";
+                    row += 1;
+                    col = 0;
+                }, 1900);
             }
             else {
                 showMessage("You entered an invalid word", 1);
