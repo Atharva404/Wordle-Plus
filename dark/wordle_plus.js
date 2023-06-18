@@ -2,16 +2,16 @@ import { words } from "../words.js";
 
 const keyboard = document.querySelector('.key-container');
 document.getElementById("streak-button").addEventListener("click", myFunction);
-document.getElementById("shuffle-button").addEventListener("click", shuffleFunction);
+//document.getElementById("shuffle-button").addEventListener("click", shuffleFunction);
 document.getElementById("tries-button").addEventListener("click", triesFunction);
 var score = 0;
 var numberTries = 0;
-function shuffleFunction() {
-    console.log("shuffle function clicked!");
-    console.log(numberTries);
-    console.log(score);
+//function shuffleFunction() {
+    //console.log("shuffle function clicked!");
+    //console.log(numberTries);
+    //console.log(score);
     //start();
-}
+//}
 function triesFunction() {
     console.log("tries function clicked!");
     document.getElementById("tries-button").innerHTML = "Total Tries: " + numberTries;
@@ -174,6 +174,7 @@ function update() {
                 if (correct == wordLength) {
                     gameOver = true;
                     showMessage("You Win!", 2);
+                    document.getElementById("playAgain").style.visibility = "visible";
                 }
                 
             } else if (word.toUpperCase().includes(letter)) {
