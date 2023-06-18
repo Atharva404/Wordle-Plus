@@ -97,6 +97,9 @@ function clear() {
             currTile.innerText = "";
         }
     }
+    for (let i = 0; i < allKeys.length; i++) {
+        clickEvent(allKeys[i], '#EDEDF4');
+    }
     row = 0;
     col = 0;
 }
