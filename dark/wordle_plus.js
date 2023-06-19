@@ -6,10 +6,9 @@ document.getElementById("tries-button").addEventListener("click", triesFunction)
 document.getElementById("dark-mode-toggle").addEventListener("click", darkModeFunction);
 var score = 0;
 var numberTries = 0;
-
 function darkModeFunction() {
     console.log("dark mode function clicked!");
-    document.body.classList.toggle("dark-theme");
+    document.body.classList.toggle("light-theme");
 }
 function triesFunction() {
     console.log("tries function clicked!");
