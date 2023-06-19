@@ -133,9 +133,18 @@ function start() {
             if (words.includes(userWord.toLowerCase())) {
                 numberTries++;
                 update();
-                userWord = "";
-                row += 1;
-                col = 0;
+                if (row + 1 === guesses) {
+                    userWord = "";
+                    row += 1;
+                    col = 0;
+                }
+                else {
+                    setTimeout(function() {
+                        userWord = "";
+                        row += 1;
+                        col = 0;
+                    }, 1800);
+                }
             }
             else {
                 showMessage("You entered an invalid word", 1);
