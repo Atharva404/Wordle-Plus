@@ -20,7 +20,6 @@ function darkModeFunction() {
     else {
         toggleClicked = false;
     }
-    console.log("dark mode function clicked!");
     document.body.classList.toggle("light-theme");
     for (let i = 0; i < totalLettersIncorrect.length; i++) {
         if (toggleClicked === true) {
@@ -36,16 +35,13 @@ function darkModeFunction() {
     }
 }
 function triesFunction() {
-    console.log("tries function clicked!");
     document.getElementById("tries-button").innerHTML = "Total Tries: " + numberTries;
-    //start();
 }
 function myFunction() {
-    console.log("clicked!");
     document.getElementById("streak-button").innerHTML = "Current Points: " + score;
 }
 window.addEventListener("load", (event) => {
-    console.log("Welcome to Wordle Plus!");
+    showMessage("Welcome to Wordle Plus!", 1);
 });
 
 document.querySelector('.dropdown-menu').addEventListener('click', function(event) {
@@ -238,6 +234,6 @@ const showMessage = (message, index) => {
     if (index === 1) {
         setTimeout(function() {
             ptag.style.visibility = "hidden";
-        }, 1200);
+        }, 2000);
     }
 }
