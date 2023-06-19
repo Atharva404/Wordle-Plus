@@ -1,14 +1,39 @@
 import { words } from "../words.js";
+
 const keyboard = document.querySelector('.key-container');
+
 document.getElementById("streak-button").addEventListener("click", myFunction);
-//document.getElementById("shuffle-button").addEventListener("click", shuffleFunction);
 document.getElementById("tries-button").addEventListener("click", triesFunction);
 document.getElementById("dark-mode-toggle").addEventListener("click", darkModeFunction);
+
 var score = 0;
 var numberTries = 0;
+var totalLettersIncorrect = [];
+var coloredKeys = [];
+var toggleClicked = false;
+
+
 function darkModeFunction() {
+    if (toggleClicked === false) {
+        toggleClicked = true;
+    }
+    else {
+        toggleClicked = false;
+    }
     console.log("dark mode function clicked!");
     document.body.classList.toggle("light-theme");
+    for (let i = 0; i < totalLettersIncorrect.length; i++) {
+        if (toggleClicked === true) {
+            if (!coloredKeys.includes(totalLettersIncorrect[i])) {
+                clickEvent(totalLettersIncorrect[i], '#698996');
+            }
+        }
+        else {
+            if (!coloredKeys.includes(totalLettersIncorrect[i])) {
+                clickEvent(totalLettersIncorrect[i], '#272729');
+            }
+        }
+    }
 }
 function triesFunction() {
     console.log("tries function clicked!");
@@ -86,9 +111,6 @@ window.onload = function() {
     start();
 }
 
-var coloredKeys = [];
- // add animations
-
 function start() {
     // Initialize the gameboard
     word = words[Math.floor(Math.random() * words.length)];
@@ -116,7 +138,12 @@ function start() {
                     currTile.innerText = key.code[3];
                     userWord += currTile.innerText;
                     if (!coloredKeys.includes(key.code[3])) {
-                        clickEvent(key.code[3], '#272729');
+                        if (toggleClicked === false) { 
+                            clickEvent(key.code[3], '#272729');
+                        } else {
+                            clickEvent(key.code[3], '#698996');
+                        }
+                        totalLettersIncorrect.push(key.code[3]);
                     }
                     guess.push(key.code[3]);
                     col++;
