@@ -48,12 +48,14 @@
                     <div class="dropdown-divider"></div>
                     <a class="dropdown-item" href="#">Custom Dictionary</a>
                     <!-- <div class="dropdown-divider"></div>
+                    <button onClick="window.location.reload();" type="button" style = "visibility: hidden" class = "dropdown-item" id = "playAgain">Play Again?</button> -->
+                    <!-- <div class="dropdown-divider"></div>
                     <button class = "dropdown-item" id = "shuffle-button">Shuffle Button</button> -->
                   </div>
                 </li>
-                <!-- <li class="nav-item">
-                  <a class="nav-link" href="./customization.html">CUSTOMIZATION</a>
-                </li> -->
+                <li class="nav-item">
+                  <button onClick="window.location.reload();" type="button" style = "visibility: hidden" class = "dropdown-item" id = "playAgain">Play Again?</button>
+                </li>
                 <!-- <li class="nav-item">
                   <a class="nav-link" href="./wordle_plus.html">SHUFFLE</a>
                 </li> -->
@@ -65,8 +67,7 @@
     <div class = "game">
       <div class = "message-container"><p id = "par1" style="visibility: hidden"></p></div>
       <br>
-      <button onClick="window.location.reload();" type="button" style = "visibility: hidden" id = "playAgain">Play Again?</button>
-        <div ID = "board"></div>
+      <div ID = "board"></div>
         <!--Keyboard Word Bank-->
         <div class = "key-container"></div>
     </div>

@@ -115,7 +115,6 @@ function start() {
             if (col < wordLength) {
                 let currTile = document.getElementById(row.toString() + "-" + col.toString());
                 if (currTile.innerText == "") {
-                    console.log(key.code[3]);
                     currTile.innerText = key.code[3];
                     userWord += currTile.innerText;
                     if (!coloredKeys.includes(key.code[3])) {
