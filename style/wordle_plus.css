@@ -47,6 +47,10 @@ hr {
     outline: none;
     box-shadow: none;
 }
+#dark-mode-toggle{
+    outline: none;
+    box-shadow: none;
+}
 #shuffle-button {
     outline: none;
     box-shadow: none;
