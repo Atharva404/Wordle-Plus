@@ -11,7 +11,13 @@
 
 .dark-theme {
     --primary-color: white;
-    --secondary-color: #251605;
+    --secondary-color: #0A0908;
+    --third-color: black;
+    --fourth-color: #7ddb9b;
+    --fifth-color: #272D2D;
+    --sixth-color: #C0C0C0;
+    --seventh-color: #FF6201;
+    --eigth-color: #5DF88E;
 }
 body {
     font-family: 'Rubik', sans-serif;
@@ -55,6 +61,7 @@ hr {
 .navbar {
     /* border-bottom: 1px solid #292929; */
     border-bottom: 1px solid var(--third-color);
+    background-color: black;
     padding-bottom: 20px;
 }
 .nav-link:hover::after {
@@ -71,6 +78,7 @@ hr {
 p {
     /* background-color: white; */
     background-color: var(--secondary-color);
+    color: var(--primary-color);
     border-radius: 10px;
     padding: 10px;
     margin: 0;
