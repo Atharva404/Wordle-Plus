@@ -153,19 +153,21 @@ function start() {
                         col = 0;
                     }, 1800);
                 }
+                setTimeout(function() {
+                    if (!gameOver && row == guesses) {
+                        console.log("here");
+                        gameOver = true;
+                        var newMessage = "You Lose! The correct word is: " + word;
+                        showMessage(newMessage, 3);
+                        setTimeout(function() {
+                            document.getElementById("playAgain").style.visibility = "visible";
+                        }, 1200);
+                    }
+                }, 1800);
             }
             else {
                 showMessage("You entered an invalid word", 1);
             }
-        }
-        if (!gameOver && row == guesses) {
-            console.log("here");
-            gameOver = true;
-            var newMessage = "You Lose! The correct word is: " + word;
-            showMessage(newMessage, 3);
-            setTimeout(function() {
-                document.getElementById("playAgain").style.visibility = "visible";
-            }, 1200);
         }
     })
 }
