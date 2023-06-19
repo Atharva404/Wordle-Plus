@@ -141,17 +141,16 @@ function start() {
             if (words.includes(userWord.toLowerCase())) {
                 numberTries++;
                 update();
-                setTimeout(function() {
-                    userWord = "";
-                    row += 1;
-                    col = 0;
-                }, 1900);
+                userWord = "";
+                row += 1;
+                col = 0;
             }
             else {
                 showMessage("You entered an invalid word", 1);
             }
         }
         if (!gameOver && row == guesses) {
+            console.log("here");
             gameOver = true;
             var newMessage = "You Lose! The correct word is: " + word;
             showMessage(newMessage, 3);

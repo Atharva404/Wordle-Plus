@@ -31,14 +31,14 @@ hr {
     outline: none;
     box-shadow: none;
 }
+
 #playAgain {
-    background-color: #5DF88E;
-    border-radius: 10px;
-    padding: 10px;
-    padding-top: 2px;
-    padding-bottom: 5px;
-    margin: 0;
-}
+    background-color: #7ddb9b;
+    border-radius: 2px;
+    margin-left: 5px;
+    outline: none;
+    box-shadow: none;
+} 
 
 .navbar {
     border-bottom: 1px solid #251605;
