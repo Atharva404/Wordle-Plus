@@ -35,7 +35,7 @@ function customWords() {
         console.log(document.getElementById('textArea').value);
         var tmpWords = document.getElementById("textArea").value.split(/[,.\s]/);
         for (let i = 0; i < tmpWords.length; i++) {
-            if (tmpWords[i].length === 5 && words.includes(tmpWords[i]) === true) {
+            if (tmpWords[i].length === 5 && words.includes(tmpWords[i].toLowerCase()) === true) {
                 wordsArr.push(tmpWords[i]);
             }
         }
