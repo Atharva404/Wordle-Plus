@@ -1,5 +1,3 @@
-
-![Uploading Screenshot 2023-06-20 at 5.42.58 PM.png…]()
 # Wordle-Plus
 This is my attempt at recreating the famous internet game: Wordle. Unlike the original game, my attempt will have multiple features such as a shuffle button where you can get a new word upon completion and a custom dictionary where users can input their own words.
 
@@ -28,12 +26,13 @@ Learned:
 * Another thing that I learned and thought was cool was how we can change the visibility of messages and buttons on this website through the styling feature within javascript. 'ptag.style.visibility = "visible";'
 
 Photos of my website:
-* <img width="1512" alt="Screenshot 2023-06-20 at 5 42 53 PM" src="https://github.com/Atharva404/Wordle-Plus/assets/55639424/4ebf0117-696b-45c4-bbf6-6c12c0803232">
-* 
-![Uploading Screenshot 2023-06-20 at 5.43.11 PM.png…]()
-![Uploading Screenshot 2023-06-20 at 5.43.17 PM.png…]()
+<img width="1512" alt="Screenshot 2023-06-20 at 5 42 53 PM" src="https://github.com/Atharva404/Wordle-Plus/assets/55639424/4ebf0117-696b-45c4-bbf6-6c12c0803232">
 
+<img width="1508" alt="Screenshot 2023-06-20 at 5 43 11 PM" src="https://github.com/Atharva404/Wordle-Plus/assets/55639424/e7ee156d-420e-4f42-9c37-068849b12251">
 
+<img width="1512" alt="Screenshot 2023-06-20 at 5 42 53 PM" src="https://github.com/Atharva404/Wordle-Plus/assets/55639424/fa8da722-ae3f-40d8-8d19-0aa0ab6f6bae">
+
+<img width="1510" alt="Screenshot 2023-06-20 at 5 42 58 PM" src="https://github.com/Atharva404/Wordle-Plus/assets/55639424/d6c45337-2796-4ba6-93a7-75213768d2ed">
 
 
 
