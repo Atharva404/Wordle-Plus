@@ -67,6 +67,14 @@ hr {
 .nav-link:hover::after {
     opacity: 1;
 }
+#formLabel {
+    color: var(--secondary-color);
+}
+input[type=text] {
+    width: 50%;
+    padding: 12px 20px;
+    border-radius: 5px;
+}
 
 .game {
     height: 90vh;

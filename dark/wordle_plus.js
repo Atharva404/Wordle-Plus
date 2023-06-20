@@ -5,13 +5,25 @@ const keyboard = document.querySelector('.key-container');
 document.getElementById("streak-button").addEventListener("click", myFunction);
 document.getElementById("tries-button").addEventListener("click", triesFunction);
 document.getElementById("dark-mode-toggle").addEventListener("click", darkModeFunction);
-
+document.getElementById("custom_dictionary").addEventListener("click", customFunction);
 var score = 0;
 var numberTries = 0;
 var totalLettersIncorrect = [];
 var coloredKeys = [];
 var toggleClicked = false;
+var customToggle = false;
 
+function customFunction() {
+    console.log("Custom clicked");
+    if (customToggle === false) {
+        customToggle = true;
+        document.getElementById('custom_words').style.display = "block";
+    }
+    else {
+        customToggle = false;
+        document.getElementById('custom_words').style.display = "none";
+    }
+}
 
 function darkModeFunction() {
     if (toggleClicked === false) {
