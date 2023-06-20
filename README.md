@@ -22,6 +22,7 @@ Learned:
 * Since this was my very first project, I understood how and why Javascript is incorporated within web development and how it is a vital programming language.
 * Learned how to read debug messages and how to use console.log() to narrow down the source of my error.
 * Upon reserarching, I found this website that gives the hex codes for colors: coolors.co
+* I learned how to use animations to flip the tiles for the letters. I thought this was very cool since this was my first time working with the animations. I also used clickEvent methods to change the color properities of the keyboard. 
 * Understood how to connect code with html and manipulate the attributes of texts and buttons to get the desired output through javascript.
 * Another thing that I learned and thought was cool was how we can change the visibility of messages and buttons on this website through the styling feature within javascript. 'ptag.style.visibility = "visible";'
 
