@@ -13,7 +13,7 @@ var coloredKeys = [];
 var toggleClicked = false;
 var customToggle = false;
 var wordsArr = [];
-
+var word = "";
 function customFunction() {
     console.log("Custom clicked");
     if (customToggle === false) {
@@ -32,10 +32,22 @@ function customWords() {
     input.addEventListener("keypress", function(event) {
       if (event.key === "Enter") {
         event.preventDefault();
+        console.log(document.getElementById('textArea').value);
         var tmpWords = document.getElementById("textArea").value.split(/[,.\s]/);
-        console.log(tmpWords);
+        for (let i = 0; i < tmpWords.length; i++) {
+            if (tmpWords[i].length === 5) {
+                wordsArr.push(tmpWords[i]);
+            }
+        }
       }
     });
+    if (wordsArr.length === 0) {
+        word = words[Math.floor(Math.random() * words.length)];
+    }
+    else {
+        word = wordsArr[Math.floor(Math.random() * wordsArr.length)];
+    }
+    console.log("new word: " + word);
 }
 
 function darkModeFunction() {
@@ -121,21 +133,24 @@ var guesses = 6;
 //length of word
 var wordLength = 5;
 
+if (wordsArr.length === 0) {
+    word = words[Math.floor(Math.random() * words.length)];
+}
+else {
+    word = wordsArr[Math.floor(Math.random() * wordsArr.length)];
+}
+console.log(word);
 //present index -- player's current posotion
 var row = 0;
 var col = 0;
 
 var gameOver = false;
-var word = words[Math.floor(Math.random() * words.length)];
 
 window.onload = function() {
     start();
 }
-
 function start() {
     // Initialize the gameboard
-    word = words[Math.floor(Math.random() * words.length)];
-    console.log(word);
     let guess = [];
     for (let i = 0; i < guesses; i++) {
         for (let j = 0; j < wordLength; j++) {
@@ -153,7 +168,6 @@ function start() {
                 return ;
             }
             if ("KeyA" <= key.code && key.code <= "KeyZ") {
-
                 if (col < wordLength) {
                     let currTile = document.getElementById(row.toString() + "-" + col.toString());
                     if (currTile.innerText == "") {
