@@ -24,6 +24,10 @@ function customFunction() {
         customToggle = false;
         document.getElementById('custom_words').style.display = "none";
     }
+    temp();
+
+}
+function temp() {
     var input = document.getElementById("textArea");
     input.addEventListener("keypress", function(event) {
       if (event.key === "Enter") {
@@ -143,71 +147,73 @@ function start() {
     }
     // Listen for Key Press
     document.addEventListener("keyup", (key) => {
-        if (gameOver) {
-            return ;
-        }
-        if ("KeyA" <= key.code && key.code <= "KeyZ") {
+        if (customToggle === false) {
+            if (gameOver) {
+                return ;
+            }
+            if ("KeyA" <= key.code && key.code <= "KeyZ") {
 
-            if (col < wordLength) {
-                let currTile = document.getElementById(row.toString() + "-" + col.toString());
-                if (currTile.innerText == "") {
-                    currTile.innerText = key.code[3];
-                    userWord += currTile.innerText;
-                    if (!coloredKeys.includes(key.code[3])) {
-                        if (toggleClicked === false) { 
-                            clickEvent(key.code[3], '#272729');
-                        } else {
-                            clickEvent(key.code[3], '#698996');
+                if (col < wordLength) {
+                    let currTile = document.getElementById(row.toString() + "-" + col.toString());
+                    if (currTile.innerText == "") {
+                        currTile.innerText = key.code[3];
+                        userWord += currTile.innerText;
+                        if (!coloredKeys.includes(key.code[3])) {
+                            if (toggleClicked === false) { 
+                                clickEvent(key.code[3], '#272729');
+                            } else {
+                                clickEvent(key.code[3], '#698996');
+                            }
+                            totalLettersIncorrect.push(key.code[3]);
                         }
-                        totalLettersIncorrect.push(key.code[3]);
+                        guess.push(key.code[3]);
+                        col++;
                     }
-                    guess.push(key.code[3]);
-                    col++;
                 }
-            }
-        } else if (key.code == "Backspace" && col != 0) {
-            if (col > 0 && col <= wordLength) {
-                col--;
-            }
-            guess.pop();
-            let letter = userWord[userWord.length-1];
-            if (guess.includes(letter) == false) {
-                clickEvent(letter, "#EDEDF4");
-            }
-            let currTile = document.getElementById(row.toString() + "-" + col.toString());
-            currTile.innerText = "";
-            userWord = userWord.substring(0, userWord.length - 1);   
+            } else if (key.code == "Backspace" && col != 0) {
+                if (col > 0 && col <= wordLength) {
+                    col--;
+                }
+                guess.pop();
+                let letter = userWord[userWord.length-1];
+                if (guess.includes(letter) == false) {
+                    clickEvent(letter, "#EDEDF4");
+                }
+                let currTile = document.getElementById(row.toString() + "-" + col.toString());
+                currTile.innerText = "";
+                userWord = userWord.substring(0, userWord.length - 1);   
 
-        } else if (key.code == "Enter") {
-            if (words.includes(userWord.toLowerCase())) {
-                numberTries++;
-                update();
-                if (row + 1 === guesses) {
-                    userWord = "";
-                    row += 1;
-                    col = 0;
-                }
-                else {
-                    setTimeout(function() {
+            } else if (key.code == "Enter") {
+                if (words.includes(userWord.toLowerCase())) {
+                    numberTries++;
+                    update();
+                    if (row + 1 === guesses) {
                         userWord = "";
                         row += 1;
                         col = 0;
+                    }
+                    else {
+                        setTimeout(function() {
+                            userWord = "";
+                            row += 1;
+                            col = 0;
+                        }, 1800);
+                    }
+                    setTimeout(function() {
+                        if (!gameOver && row == guesses) {
+                            console.log("here");
+                            gameOver = true;
+                            var newMessage = "You Lose! The correct word is: " + word;
+                            showMessage(newMessage, 3);
+                            setTimeout(function() {
+                                document.getElementById("playAgain").style.visibility = "visible";
+                            }, 1200);
+                        }
                     }, 1800);
                 }
-                setTimeout(function() {
-                    if (!gameOver && row == guesses) {
-                        console.log("here");
-                        gameOver = true;
-                        var newMessage = "You Lose! The correct word is: " + word;
-                        showMessage(newMessage, 3);
-                        setTimeout(function() {
-                            document.getElementById("playAgain").style.visibility = "visible";
-                        }, 1200);
-                    }
-                }, 1800);
-            }
-            else {
-                showMessage("You entered an invalid word", 1);
+                else {
+                    showMessage("You entered an invalid word", 1);
+                }
             }
         }
     })
