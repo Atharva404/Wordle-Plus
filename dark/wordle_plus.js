@@ -18,6 +18,7 @@ function customFunction() {
     if (customToggle === false) {
         customToggle = true;
         document.getElementById('custom_words').style.display = "block";
+        window.scrollTo(0, document.body.scrollHeight);
     }
     else {
         customToggle = false;
