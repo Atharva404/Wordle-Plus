@@ -39,6 +39,8 @@ function customWords() {
                 wordsArr.push(tmpWords[i]);
             }
         }
+        showMessage("Word entered. Please press custom dictionary button to start playing!", 1);
+        document.body.scrollTop = document.documentElement.scrollTop = 0;
       }
     });
     if (wordsArr.length === 0) {
