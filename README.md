@@ -7,7 +7,7 @@ In this project I learned how to incorporate bootstrap elements into our own wor
 Struggles:
 * **Problem:** I stuggled on how to show the messages on screen for a certain amount of time. 
 
-* Solution: by using 'document.getElementById()' I was able to retrieve the element and alter              the properties to my needs. I also figured out the benefits of setTimeout()
+* Solution: By using 'document.getElementById()' I was able to retrieve the element and alter              the properties to my needs. I also figured out the benefits of setTimeout()
         
 * **Problem:** How to optimize the light and dark theme without creating two seperate html/css/javascript files
   
