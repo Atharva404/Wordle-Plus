@@ -37,9 +37,11 @@ Photos of my website:
 
 <img width="1508" alt="Screenshot 2023-06-20 at 5 43 11 PM" src="https://github.com/Atharva404/Wordle-Plus/assets/55639424/e7ee156d-420e-4f42-9c37-068849b12251">
 
-<img width="1512" alt="Screenshot 2023-06-20 at 5 42 53 PM" src="https://github.com/Atharva404/Wordle-Plus/assets/55639424/fa8da722-ae3f-40d8-8d19-0aa0ab6f6bae">
+<img width="1512" alt="Screenshot 2023-06-20 at 6 27 36 PM" src="https://github.com/Atharva404/Wordle-Plus/assets/55639424/f071e14d-7d57-47c0-8ee4-abb30bc98f93">
 
-<img width="1510" alt="Screenshot 2023-06-20 at 5 42 58 PM" src="https://github.com/Atharva404/Wordle-Plus/assets/55639424/d6c45337-2796-4ba6-93a7-75213768d2ed">
+<img width="1512" alt="Screenshot 2023-06-20 at 6 28 16 PM" src="https://github.com/Atharva404/Wordle-Plus/assets/55639424/f020f410-37e5-40fb-accf-1f5303d5e3ad">
+
+
 
 
 
