@@ -3,6 +3,10 @@ This is my attempt at recreating the famous internet game: Wordle. Unlike the or
 
 In this project I learned how to incorporate bootstrap elements into our own workflow. This can be seen from the navbars. I also learned how to work my way around an error through console.log() to depict where my code is not functioning. This debugging method saved me so much time. 
 
+You can view my website using: 
+https://bespoke-parfait-0f86f8.netlify.app/
+
+**Please open link on computer devices only**
 
 Struggles:
 * **Problem:** I stuggled on how to show the messages on screen for a certain amount of time. 
