@@ -62,7 +62,7 @@ hr {
 .navbar {
     border-bottom: 1px solid var(--third-color);
     background-color: black;
-    padding-bottom: 20px;
+    padding-bottom: 10px;
 }
 .nav-link:hover::after {
     opacity: 1;
