@@ -12,6 +12,7 @@ var totalLettersIncorrect = [];
 var coloredKeys = [];
 var toggleClicked = false;
 var customToggle = false;
+var wordsArr = [];
 
 function customFunction() {
     console.log("Custom clicked");
@@ -24,15 +25,15 @@ function customFunction() {
         customToggle = false;
         document.getElementById('custom_words').style.display = "none";
     }
-    temp();
-
+    customWords();
 }
-function temp() {
+function customWords() {
     var input = document.getElementById("textArea");
     input.addEventListener("keypress", function(event) {
       if (event.key === "Enter") {
         event.preventDefault();
-        console.log(document.getElementById("textArea").value);
+        var tmpWords = document.getElementById("textArea").value.split(/[,.\s]/);
+        console.log(tmpWords);
       }
     });
 }
