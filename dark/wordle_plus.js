@@ -195,7 +195,12 @@ function start() {
                 guess.pop();
                 let letter = userWord[userWord.length-1];
                 if (guess.includes(letter) == false) {
-                    clickEvent(letter, "#EDEDF4");
+                    console.log(toggleClicked);
+                    if (toggleClicked === true) {
+                        clickEvent(letter, "#0A0908");
+                    } else {
+                        clickEvent(letter, "#EDEDF4");
+                    }
                 }
                 let currTile = document.getElementById(row.toString() + "-" + col.toString());
                 currTile.innerText = "";
