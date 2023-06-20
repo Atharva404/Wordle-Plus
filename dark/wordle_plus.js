@@ -14,6 +14,7 @@ var toggleClicked = false;
 var customToggle = false;
 var wordsArr = [];
 var word = "";
+
 function customFunction() {
     if (customToggle === false) {
         customToggle = true;
