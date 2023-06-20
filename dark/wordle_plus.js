@@ -34,13 +34,14 @@ function customWords() {
         console.log(document.getElementById('textArea').value);
         var tmpWords = document.getElementById("textArea").value.split(/[,.\s]/);
         for (let i = 0; i < tmpWords.length; i++) {
-            if (tmpWords[i].length === 5) {
+            if (tmpWords[i].length === 5 && words.includes(tmpWords[i]) === true) {
                 wordsArr.push(tmpWords[i]);
             }
         }
       }
     });
     if (wordsArr.length === 0) {
+        showMessage("Invalid words entered. Word has been chosen automatically", 1);
         word = words[Math.floor(Math.random() * words.length)];
     }
     else {
