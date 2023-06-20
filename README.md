@@ -1,3 +1,5 @@
+<img width="1512" alt="Screenshot 2023-06-20 at 5 42 53 PM" src="https://github.com/Atharva404/Wordle-Plus/assets/55639424/4ebf0117-696b-45c4-bbf6-6c12c0803232">
+![Uploading Screenshot 2023-06-20 at 5.42.58 PM.png…]()
 # Wordle-Plus
 This is my attempt at recreating the famous internet game: Wordle. Unlike the original game, my attempt will have multiple features such as a shuffle button where you can get a new word upon completion and a custom dictionary where users can input their own words.
 
@@ -24,4 +26,15 @@ Learned:
 * Upon reserarching, I found this website that gives the hex codes for colors: coolors.co
 * Understood how to connect code with html and manipulate the attributes of texts and buttons to get the desired output through javascript.
 * Another thing that I learned and thought was cool was how we can change the visibility of messages and buttons on this website through the styling feature within javascript. 'ptag.style.visibility = "visible";'
+![Uploading Screenshot 2023-06-20 at 5.43.11 PM.png…]()
+![Uploading Screenshot 2023-06-20 at 5.43.17 PM.png…]()
+
+
+
+
+
+
+
+
+
     
