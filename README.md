@@ -18,7 +18,7 @@ Struggles:
 *  Solution: This was my first time using bootstrap and incorproating into my very first html/css/javascript project. I eventually figured out how to use the CDN for bootstrap and link the files onto my html website through stack overflow.
 
 Learned:
-* I learned how usefull websites are such as stack overflow to get information to solve our problems. Our simplest issues can be solved with a quick google search which can save us so much time.
+* I learned how usefull websites such as stack overflow are to get information to solve our problems. Our simplest issues can be solved with a quick google search which can save us so much time.
 * Since this was my very first project, I understood how and why Javascript is incorporated within web development and how it is a vital programming language.
 * Learned how to read debug messages and how to use console.log() to narrow down the source of my error.
 * Upon reserarching, I found this website that gives the hex codes for colors: coolors.co
