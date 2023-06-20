@@ -24,6 +24,13 @@ function customFunction() {
         customToggle = false;
         document.getElementById('custom_words').style.display = "none";
     }
+    var input = document.getElementById("textArea");
+    input.addEventListener("keypress", function(event) {
+      if (event.key === "Enter") {
+        event.preventDefault();
+        console.log(document.getElementById("textArea").value);
+      }
+    });
 }
 
 function darkModeFunction() {
