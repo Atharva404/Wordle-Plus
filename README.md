@@ -26,6 +26,8 @@ Learned:
 * Another thing that I learned and thought was cool was how we can change the visibility of messages and buttons on this website through the styling feature within javascript. 'ptag.style.visibility = "visible";'
 
 Photos of my website:
+
+
 <img width="1512" alt="Screenshot 2023-06-20 at 5 42 53 PM" src="https://github.com/Atharva404/Wordle-Plus/assets/55639424/4ebf0117-696b-45c4-bbf6-6c12c0803232">
 
 <img width="1508" alt="Screenshot 2023-06-20 at 5 43 11 PM" src="https://github.com/Atharva404/Wordle-Plus/assets/55639424/e7ee156d-420e-4f42-9c37-068849b12251">
