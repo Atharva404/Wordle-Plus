@@ -1,10 +1,10 @@
 # Wordle-Plus
 This is my attempt at recreating the famous internet game: Wordle. Unlike the original game, my attempt will have multiple features such as a shuffle button where you can get a new word upon completion and a custom dictionary where users can input their own words.
 
-In this project I learned how to incorporate bootstrap elements into our own workflow. This can be seen from the navbars. I also learned how to work my way around an error through console.log() to depict where my code is not functioning. This debugging method saved me so much time. 
-
 You can view my website using: 
 https://bespoke-parfait-0f86f8.netlify.app/
+
+In this project I learned how to incorporate bootstrap elements into our own workflow. This can be seen from the navbars. I also learned how to work my way around an error through console.log() to depict where my code is not functioning. This debugging method saved me so much time. 
 
 **Please open link on computer devices only**
 
