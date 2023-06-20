@@ -64,7 +64,7 @@ function darkModeFunction() {
     for (let i = 0; i < totalLettersIncorrect.length; i++) {
         if (toggleClicked === true) {
             if (!coloredKeys.includes(totalLettersIncorrect[i])) {
-                clickEvent(totalLettersIncorrect[i], '#BCB8B1');
+                clickEvent(totalLettersIncorrect[i], '#698996');
             }
         }
         else {
@@ -195,9 +195,8 @@ function start() {
                 guess.pop();
                 let letter = userWord[userWord.length-1];
                 if (guess.includes(letter) == false) {
-                    console.log(toggleClicked);
                     if (toggleClicked === true) {
-                        clickEvent(letter, "#0A0908");
+                        clickEvent(letter, "#272D2D");
                     } else {
                         clickEvent(letter, "#EDEDF4");
                     }
