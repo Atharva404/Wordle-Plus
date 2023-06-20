@@ -15,7 +15,6 @@ var customToggle = false;
 var wordsArr = [];
 var word = "";
 function customFunction() {
-    console.log("Custom clicked");
     if (customToggle === false) {
         customToggle = true;
         document.getElementById('custom_words').style.display = "block";
