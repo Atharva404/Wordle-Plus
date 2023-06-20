@@ -24,7 +24,7 @@ function darkModeFunction() {
     for (let i = 0; i < totalLettersIncorrect.length; i++) {
         if (toggleClicked === true) {
             if (!coloredKeys.includes(totalLettersIncorrect[i])) {
-                clickEvent(totalLettersIncorrect[i], '#698996');
+                clickEvent(totalLettersIncorrect[i], '#BCB8B1');
             }
         }
         else {
